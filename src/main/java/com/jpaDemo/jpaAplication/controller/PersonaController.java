@@ -36,18 +36,19 @@ public class PersonaController {
                                  @RequestParam(required = false, name = "nombre")String nuevoNombre,
                                  @RequestParam(required = false, name = "apellido")String nuevoApellido,
                                  @RequestParam(required = false, name = "edad")int nuevaEdad){
-        //envio id original(para buscar)
+
         //envio nuevos datos para modificar
-        Persona personaExistente = interfacePersona.findPersona(id_original);
-        if (personaExistente == null) {
-            throw new RuntimeException("La persona con id " + id_original + " no existe.");
-        }
-
-
         interfacePersona.editPersona(id_original, nuevoNombre, nuevoApellido, nuevaEdad);
 
         Persona persona = interfacePersona.findPersona(id_original);
 
         return persona;
+    }
+
+    @PutMapping("/personas/editar")
+    public Persona editPersona(@RequestBody Persona persona){
+        interfacePersona.editPersona(persona);
+
+        return interfacePersona.findPersona(persona.getId());
     }
 }

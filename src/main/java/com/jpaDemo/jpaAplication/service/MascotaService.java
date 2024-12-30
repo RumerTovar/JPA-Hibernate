@@ -4,9 +4,10 @@ import com.jpaDemo.jpaAplication.model.Mascota;
 import com.jpaDemo.jpaAplication.model.Persona;
 import com.jpaDemo.jpaAplication.repository.IMascotaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class MascotaService implements IMascotaService{
     //inyeccion de dependencias
     @Autowired
