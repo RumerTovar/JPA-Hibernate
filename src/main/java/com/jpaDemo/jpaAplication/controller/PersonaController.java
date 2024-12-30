@@ -45,6 +45,7 @@ public class PersonaController {
         return persona;
     }
 
+    //este metodo para editar es mucho mas corto que el anterior
     @PutMapping("/personas/editar")
     public Persona editPersona(@RequestBody Persona persona){
         interfacePersona.editPersona(persona);

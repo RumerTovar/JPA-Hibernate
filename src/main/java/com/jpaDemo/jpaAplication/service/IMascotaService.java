@@ -7,15 +7,15 @@ import java.util.List;
 
 public interface IMascotaService {
 
-    List<Mascota> getMascotas();
+    public List<Mascota> getMascotas();
 
-    void saveMascota(Mascota mascota);
+    public void saveMascota(Mascota mascota);
 
-    void deleteMascota(Long id_mascota);
+    public void deleteMascota(Long id_mascota);
 
-    Mascota findMascota(Long id_mascota);
+    public Mascota findMascota(Long id_mascota);
 
-    void editMascota(Long id_mascota,
+    public void editMascota(Long id_mascota,
                      String nuevoNombre,
                      String nuevaEspecie,
                      String nuevaRaza,
